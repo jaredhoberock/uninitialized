@@ -1,13 +1,11 @@
-uninitialized
-=============
-
-Templates for explicitly managing the lifetime of uninitialized variables.
+`uninitialized`
+==============
 
 Occasionally, it is desirable to explicitly manage the construction and destruction of stack-allocated variables.
 Doing so with explicit use of untyped buffers, placement new, and delete can be cumbersome. This library solves those
 problems.
 
-demo
+Demo
 ====
 
 The following code demonstrates how to use `uninitialized` from within a CUDA kernel
