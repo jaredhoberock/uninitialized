@@ -1,20 +1,3 @@
-uninitialized
-=============
-
-Templates for explicitly managing the lifetime of uninitialized variables.
-
-Occasionally, it is desirable to explicitly manage the construction and destruction of stack-allocated variables.
-Doing so with explicit use of untyped buffers, placement new, and delete can be cumbersome. This library solves those
-problems.
-
-demo
-====
-
-The following code demonstrates how to use `uninitialized` from within a CUDA kernel
-on variables in `__shared__` memory to explicitly control which CUDA thread is responsible for managing the
-lifetime of the variable:
-
-```
 #include <cstdio>
 
 #include "uninitialized.hpp"
@@ -100,5 +83,4 @@ int main()
   cudaThreadSynchronize();
   return 0;
 }
-```
 
