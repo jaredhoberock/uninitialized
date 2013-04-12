@@ -15,83 +15,83 @@ template<typename T, std::size_t N>
     typedef const_pointer const_iterator;
     typedef std::size_t   size_type;
 
-    __forceinline__ __device__ iterator begin()
+    __forceinline__ __host__ __device__ iterator begin()
     {
       return data();
     }
 
-    __forceinline__ __device__ const_iterator begin() const
+    __forceinline__ __host__ __device__ const_iterator begin() const
     {
       return data();
     }
 
-    __forceinline__ __device__ iterator end()
+    __forceinline__ __host__ __device__ iterator end()
     {
       return begin() + size();
     }
 
-    __forceinline__ __device__ const_iterator end() const
+    __forceinline__ __host__ __device__ const_iterator end() const
     {
       return begin() + size();
     }
 
-    __forceinline__ __device__ const_iterator cbegin() const
+    __forceinline__ __host__ __device__ const_iterator cbegin() const
     {
       return begin();
     }
 
-    __forceinline__ __device__ const_iterator cend() const
+    __forceinline__ __host__ __device__ const_iterator cend() const
     {
       return end();
     }
 
-    __forceinline__ __device__ size_type size() const
+    __forceinline__ __host__ __device__ size_type size() const
     {
       return N;
     }
 
-    __forceinline__ __device__ bool empty() const
+    __forceinline__ __host__ __device__ bool empty() const
     {
       return false;
     }
 
-    __forceinline__ __device__ T* data()
+    __forceinline__ __host__ __device__ T* data()
     {
       return impl.get();
     }
 
-    __forceinline__ __device__ const T* data() const
+    __forceinline__ __host__ __device__ const T* data() const
     {
       return impl.get();
     }
 
     // element access
-    __forceinline__ __device__ reference operator[](size_type n)
+    __forceinline__ __host__ __device__ reference operator[](size_type n)
     {
       return data()[n];
     }
 
-    __forceinline__ __device__ const_reference operator[](size_type n) const
+    __forceinline__ __host__ __device__ const_reference operator[](size_type n) const
     {
       return data()[n];
     }
 
-    __forceinline__ __device__ reference front()
+    __forceinline__ __host__ __device__ reference front()
     {
       return *data();
     }
 
-    __forceinline__ __device__ const_reference front() const
+    __forceinline__ __host__ __device__ const_reference front() const
     {
       return *data();
     }
 
-    __forceinline__ __device__ reference back()
+    __forceinline__ __host__ __device__ reference back()
     {
       return data()[size() - size_type(1)];
     }
 
-    __forceinline__ __device__ const_reference back() const
+    __forceinline__ __host__ __device__ const_reference back() const
     {
       return data()[size() - size_type(1)];
     }
